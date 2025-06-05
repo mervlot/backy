@@ -9,7 +9,6 @@ const { fileURLToPath } = require("url");
 dotenv.config;
 const fs = require("fs");
 const path = require("path");
-const authRoutes = require("./routes/auth.js");
 
 const app = express();
 
