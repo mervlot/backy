@@ -22,7 +22,6 @@ const jsonData = () => {
   const content = fs.readFileSync(path.join(__dirname, "data", file));
 
     const data = JSON.parse(content);
-    console.log(data);
     combined = data;
 
   }
@@ -50,8 +49,7 @@ app.get("/search", (req, res) => {
   const { q = "", category = "", page = 1 } = req.query;
   // const data = JSON.parse(fs.readFileSync('./data.json'));
   const data = jsonData();
-  console.log(data);
-
+ 
   const filterd = data.filter((item) => {
     const matchQuery =
       item.title.toLowerCase().includes(q.toLowerCase()) ||
